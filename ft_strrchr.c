@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kialvare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/27 20:57:37 by kialvare          #+#    #+#             */
-/*   Updated: 2016/09/28 10:48:41 by kialvare         ###   ########.fr       */
+/*   Created: 2016/09/28 10:51:38 by kialvare          #+#    #+#             */
+/*   Updated: 2016/09/28 13:49:18 by kialvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-int		ft_putstr(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int i;
-	
-	i = 0;
-	while (c[i] != '\0')
-	{
-		ft_putchar(1, c[i], 1);
-		i++;
-	}
-	return(c);
+	if (ft_strchr(s, c) == NULL)
+		return (NULL);
+	while (*s)
+		s++;
+	while (*s != c)
+		s--;
+	return ((char*)s);
 }

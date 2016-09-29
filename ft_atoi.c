@@ -6,13 +6,13 @@
 /*   By: kialvare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/26 18:08:46 by kialvare          #+#    #+#             */
-/*   Updated: 2016/09/26 18:10:55 by kialvare         ###   ########.fr       */
+/*   Updated: 2016/09/28 13:28:33 by kialvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_atoi(char *str)
+int     ft_atoi(const char *str)
 {
 	int i;
 	int ans;

@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kialvare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/27 20:57:37 by kialvare          #+#    #+#             */
-/*   Updated: 2016/09/28 10:48:41 by kialvare         ###   ########.fr       */
+/*   Created: 2016/09/28 13:08:01 by kialvare          #+#    #+#             */
+/*   Updated: 2016/09/28 13:10:52 by kialvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-int		ft_putstr(int c)
+char	*ft_strncat(char *dest, const char *src, size_t n)
 {
+	int destlen;
+	int srclen;
 	int i;
-	
+
 	i = 0;
-	while (c[i] != '\0')
+	destlen = ft_strlen(dest);
+	srclen = ft_strlen((char*)src);
+	while ((destlen <= (destlen + srclen)) && ((int)n > 0))
 	{
-		ft_putchar(1, c[i], 1);
+		dest[destlen] = src[i];
+		destlen++;
+		srclen--;
 		i++;
+		n--;
 	}
-	return(c);
+	dest[destlen] = '\0';
+	return(dest);
 }
