@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kialvare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/29 10:32:45 by kialvare          #+#    #+#             */
-/*   Updated: 2016/09/29 12:08:53 by kialvare         ###   ########.fr       */
+/*   Created: 2016/10/07 20:19:38 by kialvare          #+#    #+#             */
+/*   Updated: 2016/10/07 21:28:20 by kialvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	ft_memdel(void **ap)
+void	ft_strclr(char *s)
 {
-	free(*ap);
-	*ap = NULL;
+	int i;
+	int len;
+
+	i = 0;
+	len = ft_strlen(s);
+	if (!s)
+	  return ;
+	while (s[i] <= len)
+	{
+		ft_memset(s, '\0', len);
+		i++;
+	}
 }

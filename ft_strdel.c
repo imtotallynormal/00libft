@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kialvare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/29 10:32:45 by kialvare          #+#    #+#             */
-/*   Updated: 2016/09/29 12:08:53 by kialvare         ###   ########.fr       */
+/*   Created: 2016/10/07 20:14:04 by kialvare          #+#    #+#             */
+/*   Updated: 2016/10/07 20:53:11 by kialvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	ft_memdel(void **ap)
+void	ft_strdel(char **as)
 {
-	free(*ap);
-	*ap = NULL;
+	ft_memdel((void *)as);
 }
