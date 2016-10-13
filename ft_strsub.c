@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kialvare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/27 20:57:37 by kialvare          #+#    #+#             */
-/*   Updated: 2016/09/28 10:48:41 by kialvare         ###   ########.fr       */
+/*   Created: 2016/10/12 09:20:17 by kialvare          #+#    #+#             */
+/*   Updated: 2016/10/12 17:07:45 by kialvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-void		ft_putstr(char const *s)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	write(1, s, ft_strlen(s));
+	char *sub;
+
+	sub = ft_strnew(len);
+	if (!s)
+		return (NULL);
+	if (s)
+		ft_strncpy(sub, &s[start], len);
+	return (sub);
 }

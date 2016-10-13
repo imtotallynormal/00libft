@@ -1,19 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kialvare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/27 20:57:37 by kialvare          #+#    #+#             */
-/*   Updated: 2016/09/28 10:48:41 by kialvare         ###   ########.fr       */
+/*   Created: 2016/10/12 12:21:54 by kialvare          #+#    #+#             */
+/*   Updated: 2016/10/12 13:16:57 by kialvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-void		ft_putstr(char const *s)
+char	*ft_strtrim(char const *s)
 {
-	write(1, s, ft_strlen(s));
+	int i;
+	int len;
+	char *str;
+
+	len = ft_strlen(s);
+	str = ft_memalloc(len);
+	i = 0;
+	while (s[i] < len)
+	{
+		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+		  i++;
+		else
+		{
+			ft_strcpy(str, &s[i]);
+			i++;
+		}
+	}
+	return (str);
 }

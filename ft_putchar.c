@@ -6,14 +6,14 @@
 /*   By: kialvare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 20:56:26 by kialvare          #+#    #+#             */
-/*   Updated: 2016/09/28 13:52:49 by kialvare         ###   ########.fr       */
+/*   Updated: 2016/10/11 18:20:18 by kialvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void		ft_putchar(int c)
+void		ft_putchar(char c)
 {
 	write(1, &c, 1);
 }

@@ -10,19 +10,45 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-void	ft_putnbr(int n)
+static void	ft_putchar(char c)
 {
-	if (n < 0)
+	write(1, &c, 1);
+}
+
+static void	ft_putstr(char *str)
+{
+	int		i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		n = -n;
+		ft_putchar(str[i]);
+		i++;
 	}
-	if (n >= 10)
+}
+
+void		ft_putnbr(int nb)
+{
+	if (nb > 2147483647 || nb < -2147483648)
+		return ;
+	if (nb == -2147483648)
 	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
+		ft_putstr("-2147483648");
+		return ;
 	}
-	else
-		ft_putchar(n + '0');
+	if (nb < 0)
+	{
+		nb = nb * -1;
+		ft_putchar('-');
+	}
+	if (nb < 10)
+	{
+		ft_putchar(nb + 48);
+		return ;
+	}
+	ft_putnbr(nb / 10);
+	ft_putchar((nb % 10) + 48);
+	return ;
 }
