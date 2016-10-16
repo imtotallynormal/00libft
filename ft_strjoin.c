@@ -6,7 +6,7 @@
 /*   By: kialvare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/12 09:38:37 by kialvare          #+#    #+#             */
-/*   Updated: 2016/10/12 12:15:26 by kialvare         ###   ########.fr       */
+/*   Updated: 2016/10/13 20:37:12 by kialvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,18 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int len;
+	int s1_len;
 	char  *str;
-	
-	len = ft_strlen(s1) + ft_strlen(s2);
-	str = ft_strnew(len);
-	ft_strcpy(str, s1);
-	ft_strcpy(str, s2);
+		
+	if (!s1 || !s2)
+		return (NULL);
+	else
+	{
+		len = ft_strlen(s1) + ft_strlen(s1);
+		s1_len = ft_strlen(s1);
+		str = ft_strnew(len);
+		ft_strcpy(str, s1);
+		ft_strcpy(&str[s1_len], s2);
+	}
 	return (str);
 }

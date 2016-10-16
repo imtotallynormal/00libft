@@ -6,7 +6,7 @@
 /*   By: kialvare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/07 20:19:38 by kialvare          #+#    #+#             */
-/*   Updated: 2016/10/07 21:28:20 by kialvare         ###   ########.fr       */
+/*   Updated: 2016/10/10 12:26:08 by kialvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,10 @@
 
 void	ft_strclr(char *s)
 {
-	int i;
 	int len;
 
-	i = 0;
 	len = ft_strlen(s);
 	if (!s)
-	  return ;
-	while (s[i] <= len)
-	{
-		ft_memset(s, '\0', len);
-		i++;
-	}
+	  return;
+	ft_memset(s, '\0', len);
 }

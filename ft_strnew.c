@@ -6,7 +6,7 @@
 /*   By: kialvare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/07 14:21:58 by kialvare          #+#    #+#             */
-/*   Updated: 2016/10/07 20:13:54 by kialvare         ###   ########.fr       */
+/*   Updated: 2016/10/10 12:30:06 by kialvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 char	*ft_strnew(size_t size)
 {
 	char *str;
-	int i;
+	size_t i;
 
 	str = (char *)malloc(sizeof(char) * (size + 1));
 	if (!str)
@@ -24,7 +24,7 @@ char	*ft_strnew(size_t size)
 	else
 	{
 		i = 0;
-		while (i <= (int)size)
+		while (i <= size)
 		{
 	  		str[i] = 0;
 	  		i++;

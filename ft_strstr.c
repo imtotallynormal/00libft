@@ -6,7 +6,7 @@
 /*   By: kialvare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/28 11:49:27 by kialvare          #+#    #+#             */
-/*   Updated: 2016/09/28 15:12:20 by kialvare         ###   ########.fr       */
+/*   Updated: 2016/10/05 21:21:53 by kialvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,26 @@
 
 char	*ft_strstr(const char *big, const char *little)
 {
-	int i;
-	int littlelen;
+	char *str;
+	char *tofind;
 
-	i = 0;
-	if (little[i] == '\0')
-		return((char*)big);
-	littlelen = (int)ft_strlen((char*)little);
+	if (!*little)
+		return ((char *)big);
 	while (*big)
 	{
-		while (*big == little[i] && *big && littlelen > i)
+		if (*big == *little)
 		{
-			big++;
-			i++;
+			str = (char *)big;
+			tofind = (char *)little;
+			while (*str && *tofind && *str == *tofind)
+			{
+				str++;
+				tofind++;
+			}
+			if (!*tofind)
+				return ((char *)big);
 		}
-		
-		if (i == littlelen)
-		{
-			big -= littlelen;
-			return ((char*)big);
-		}
-		i = 0;
 		big++;
 	}
-	return (NULL);
+	return (0);
 }

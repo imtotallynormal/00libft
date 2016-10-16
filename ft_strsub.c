@@ -6,7 +6,7 @@
 /*   By: kialvare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/12 09:20:17 by kialvare          #+#    #+#             */
-/*   Updated: 2016/10/12 17:07:45 by kialvare         ###   ########.fr       */
+/*   Updated: 2016/10/13 16:51:36 by kialvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	sub = ft_strnew(len);
 	if (!s)
 		return (NULL);
-	if (s)
+	else if (sub)
 		ft_strncpy(sub, &s[start], len);
-	return (sub);
+		return (sub);
 }
