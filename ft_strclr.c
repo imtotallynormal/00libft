@@ -16,8 +16,9 @@ void	ft_strclr(char *s)
 {
 	int len;
 
-	len = ft_strlen(s);
-	if (!s)
-	  return;
-	ft_memset(s, '\0', len);
+	if (s)
+	{
+		len = ft_strlen(s);
+		ft_memset(s, '\0', len);
+	}
 }

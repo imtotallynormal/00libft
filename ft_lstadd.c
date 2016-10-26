@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kialvare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/07 20:14:04 by kialvare          #+#    #+#             */
-/*   Updated: 2016/10/07 20:53:11 by kialvare         ###   ########.fr       */
+/*   Created: 2016/10/24 15:20:47 by kialvare          #+#    #+#             */
+/*   Updated: 2016/10/24 15:27:36 by kialvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-void	ft_strdel(char **as)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	// ft_memdel((void *)*as);
-	free(*as);
-	*as = NULL;
+	if (alst != NULL && new != NULL)
+	{
+		new->next = *alst;
+		*alst = new;
+	}
 }
-
-// int	main(void)
-// {
-// 	char		*ret;
-
-// 	ft_strdel(NULL);
-// 	ret = ft_strnew(4);
-// 	ft_strdel(&ret);
-// 	if (ret != NULL)
-// 		printf("there seems to be an error");
-// 	ret = ft_strnew(0);
-// 	ft_strdel(&ret);
-// 	if (ret != NULL)
-// 		printf("there seems to be an error");
-// 	return (1);
-// }

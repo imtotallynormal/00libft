@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kialvare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/07 20:14:04 by kialvare          #+#    #+#             */
-/*   Updated: 2016/10/07 20:53:11 by kialvare         ###   ########.fr       */
+/*   Created: 2016/10/25 15:11:11 by kialvare          #+#    #+#             */
+/*   Updated: 2016/10/25 15:11:14 by kialvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-void	ft_strdel(char **as)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	// ft_memdel((void *)*as);
-	free(*as);
-	*as = NULL;
+	del((*alst)->content, (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }
-
-// int	main(void)
-// {
-// 	char		*ret;
-
-// 	ft_strdel(NULL);
-// 	ret = ft_strnew(4);
-// 	ft_strdel(&ret);
-// 	if (ret != NULL)
-// 		printf("there seems to be an error");
-// 	ret = ft_strnew(0);
-// 	ft_strdel(&ret);
-// 	if (ret != NULL)
-// 		printf("there seems to be an error");
-// 	return (1);
-// }
