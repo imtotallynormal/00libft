@@ -1,3 +1,3 @@
-<h1>Libft</h1>
-<p>42 Project</p>
-<p>The aim of this project was to recreate useful functions from standard C libraries that we're allowed to use in our other projects.</p>
+# Libft
+
+A 42 Project that had us re-code useful C Standard Library functions that we were then allowed to use with our later projects.
